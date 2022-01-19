@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.rotation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.rotating-slider, .rotating-slider1{
+    height: 200px;
+    position: relative;
+    width: 100px !important;
+    margin: 0
+   
+}
+
+.rotating-slider ul.direction-controls, .rotating-slider1 ul.direction-controls{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rotating-slider ul.direction-controls li.left-arrow, .rotating-slider1 ul.direction-controls li.left-arrow{
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+}
+.rotating-slider ul.direction-controls li.right-arrow, .rotating-slider1 ul.direction-controls li.right-arrow{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+.rotating-slider ul.direction-controls li button, .rotating-slider1 ul.direction-controls li button{
+    background: rgba(0,0,0,0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 1.5em;
+    line-height: 1.5em;
+    padding: 0;
+    text-align: center;
+    transition: background 0.25s;
+    width: 1.5em;
+}
+
+.rotating-slider ul.direction-controls li button:hover{
+    background: rgba(0,0,0,0.6);
+}
+
+.rotating-slider ul.slides, .rotating-slider1 ul.slides{
+    border-radius: 50%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-80%) rotate(-180deg);
+    transform-origin: center center;
+    width: 100%;
+}
+
+.rotating-slider1 ul.slides{
+    border-radius: 50%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    /* position: relative; */
+    top: 0;
+    /* left: 50%; */
+    transform: translateX(-80%) rotate(-180deg);
+    transform-origin: center center;
+    width: 100%;
+}
+
+.rotating-slider ul.slides, .rotating-slider1 ul.slides{
+    border-radius: 50%;
+    height: 100%;
+}
+
+.rotating-slider ul.slides li, .rotating-slider1 ul.slides li{
+    background-color: #ecf0f1;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    transform-origin: bottom center;
+    
+}
+
+/* .rotating-slider1 ul.slides li{
+    background-color: #ecf0f1;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    list-style: none;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    text-align: center;
+    transform-origin: left center;
+    width: 100%;
+ } */
+
+
+
+.nav {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+  
+.nav > .nav-header {
+    display: inline;
+}
+  
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+  
+.nav > .nav-btn {
+    display: none;
+}
+  
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+}
+  
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #111;
+    font-size: 1.3rem;
+}
+  
+.nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+  
+.nav > #nav-check {
+    display: none;
+}
+  
+@media (max-width:600px) {
+    .rotation{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      color: #111;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(102, 97, 97, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: rgb(161, 156, 156);
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
+
+@media (max-width:768px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+}
